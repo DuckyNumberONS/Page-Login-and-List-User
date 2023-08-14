@@ -1,7 +1,7 @@
 import { LoginContextType } from '@/lib/domain/login';
 import React, { ReactNode, createContext, useState } from 'react';
 
-interface LayoutProps {
+interface LonginProps {
     children?: ReactNode;
 }
 
@@ -10,12 +10,8 @@ export const LoginContext = createContext<LoginContextType>({
     setLogin: () => {},
 });
 
-const Layout = ({ children }: LayoutProps) => {
+const Login = ({ children }: LonginProps) => {
     const [login, setLogin] = useState(false);
-    return (
-        <div className="bg-gray-50 dark:bg-gray-900">
-            <LoginContext.Provider value={{ login, setLogin }}>{children}</LoginContext.Provider>
-        </div>
-    );
+    return <LoginContext.Provider value={{ login, setLogin }}>{children}</LoginContext.Provider>;
 };
-export default Layout;
+export default Login;
