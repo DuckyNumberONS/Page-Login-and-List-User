@@ -8,3 +8,7 @@ export interface User {
     phonenumber: string;
     role: string;
 }
+export type UserContextType = {
+    dataUser: User;
+    setDataUser: React.Dispatch<React.SetStateAction<User>>;
+};
